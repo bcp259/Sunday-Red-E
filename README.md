@@ -11,15 +11,18 @@ My project incorporates machine learning by taking into account past performance
 Data fields:
 My raw metrics are through datagolf.
 =========================================
-teetime  : the time a player started their round
-sg_putt  : strokes gained putting 
-sg_arg   : strokes gained around the green
-sg_app   : strokes gained approach the green
-sg_ott   : strokes gained off-the-tee
-sg_t2g   : strokes gained tee-to-green (sg_arg + sg_app + sg_ott)
-sg_total : strokes gained total (sg_putt + sg_arg + sg_app + sg_ott)
-
+teetime  : the time a player started their round      
+sg_putt  : strokes gained putting   
+sg_arg   : strokes gained around the green  
+sg_app   : strokes gained approach the green  
+sg_ott   : strokes gained off-the-tee  
+sg_t2g   : strokes gained tee-to-green (sg_arg + sg_app + sg_ott)  
+sg_total : strokes gained total (sg_putt + sg_arg + sg_app + sg_ott)  
+  
 To do list:
 =========================================
-[ ] Explore sample test data
-[ ] Make preliminary pass throughs to evaluate the mapping needed to be cleaned (e.g. categorize teetime)
+[ ] Explore sample test data  
+[ ] Make preliminary pass throughs to evaluate the mapping needed to be cleaned (e.g. categorize teetime)  
+[ ] Test for correlations  
+[ ] Incorporate additional datasets (possibility to include golfer place of birth/primary residence, course weather data)  
+[ ] Download draftkings
