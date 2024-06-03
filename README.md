@@ -14,7 +14,7 @@ Link to file: https://docs.google.com/spreadsheets/d/1GbzUjp_GneKJeXbqgQWCQ9Tq81
 =========================================  
 `year`                : year in which tournament was played  
 `season`              : season of which tournament was played  
-`event_id`            : id for tournament  
+`event_id`            : id for tournament (1-PLAYERS, 2-Masters, 3-PGA, 4-U.S. Open, 5-The Open)  
 `dg_id`               : id for player  
 `fin_text`            : finishing position  
 `round_num`           : round number  
@@ -30,7 +30,7 @@ Link to file: https://docs.google.com/spreadsheets/d/1GbzUjp_GneKJeXbqgQWCQ9Tq81
 `driving_dist`        : average distance of drives on par 4 and 5s  
 `driving_acc`         : percentage of fairways hit  
 `gir`                 : percentage of greens hit in regulation (including fringes)  
-`scrambling`          : percentage of shots hit around the green from 50 yards and in that saved par (or were finished in 2                               strokes or less)  
+`scrambling`          : percentage of shots hit around the green from 50 yards and in that saved par (or were finished in 2                                                    strokes or less)  
 `prox_rgh`            : average proximity of all shots hit from locations besides fairway and intermediate rough  
 `prox_fw`             : average proximity of all shots hit from the fairway  
 `great_shots`         : self explanatory but related to being in the 95th percentile of  strokes gained metrics  
@@ -46,6 +46,8 @@ Link to file: https://docs.google.com/spreadsheets/d/1GbzUjp_GneKJeXbqgQWCQ9Tq81
 Notes about data:
 - if a player did not make the cut (`made_cut` = 0), they will not have an entry for `round_num` 3 or 4 and no subsequent stats related for the rounds
 - `driving_dist` only includes drives on par 4s and par 5s since a driver is not used on par 3s
+- for The Open 2017, Masters 2017, The PLAYERS 2020, certain metrics are missing such as broken down strokes gained, average driving distance, greens in regulation
+- 
 
 To do list:
 =========================================
@@ -56,4 +58,5 @@ To do list:
     > drop columns  
       - year, season, course_num, course_par (constant values)  
       - start_hole? need to dig deeper and see if masters is not shotgun start aka everyone will start at hole 1  
+        - edit: not all tournaments start at hole 1. some tournaments started at the back 9 (10) due to various conditions such as inclement weather
 [ ] Incorporate additional datasets (possibility to include golfer place of birth/primary residence, course weather data)  
