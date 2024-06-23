@@ -9,8 +9,7 @@ The purpose of this project is to track performances of golfers competing in PGA
 My project incorporates machine learning by taking into account past performance data in the same course / tournament, variables such as tee time and overall performance in order to accurately predict performance in future tournaments. 
 
 Data fields:  
-My raw metrics are through datagolf.  
-Link to file: https://docs.google.com/spreadsheets/d/1GbzUjp_GneKJeXbqgQWCQ9Tq81TX9njoDz1tspMhLlc/edit?usp=sharing  
+My raw metrics are through datagolf (https://datagolf.com/)
 =========================================  
 `year`                : year in which tournament was played  
 `season`              : season of which tournament was played  
@@ -46,17 +45,19 @@ Link to file: https://docs.google.com/spreadsheets/d/1GbzUjp_GneKJeXbqgQWCQ9Tq81
 Notes about data:
 - if a player did not make the cut (`made_cut` = 0), they will not have an entry for `round_num` 3 or 4 and no subsequent stats related for the rounds
 - `driving_dist` only includes drives on par 4s and par 5s since a driver is not used on par 3s
-- for The Open 2017, Masters 2017, The PLAYERS 2020, certain metrics are missing such as broken down strokes gained, average driving distance, greens in regulation
-- 
+- for The Open 2017, Masters 2017, The PLAYERS 2020, certain metrics are missing such as broken down strokes gained, average driving distance, greens in regulation  
 
 To do list:
 =========================================
 [X] Explore sample test data  
 [X] Make preliminary pass throughs to evaluate the mapping needed to be cleaned (e.g. categorize teetime)  
 [X] Test for correlations
-[ ] Adjust dataframe for the purposes of running regression model
+[X] Adjust dataframe for the purposes of running regression model
     > drop columns  
       - year, season, course_num, course_par (constant values)  
       - start_hole? need to dig deeper and see if masters is not shotgun start aka everyone will start at hole 1  
-        - edit: not all tournaments start at hole 1. some tournaments started at the back 9 (10) due to various conditions such as inclement weather
+        - edit: not all tournaments start at hole 1. some tournaments started at the back 9 (10) due to various conditions such as inclement weather  
+        - edit 2: some rounds start on other holes  
+[ ] create additional regression to predict on round_score
+[ ] re-evaluate target variable, need cumulative data due to how tournaments are scored 
 [ ] Incorporate additional datasets (possibility to include golfer place of birth/primary residence, course weather data)  
