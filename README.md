@@ -58,6 +58,6 @@ To do list:
       - start_hole? need to dig deeper and see if masters is not shotgun start aka everyone will start at hole 1  
         - edit: not all tournaments start at hole 1. some tournaments started at the back 9 (10) due to various conditions such as inclement weather  
         - edit 2: some rounds start on other holes  
-[ ] create additional regression to predict on round_score
-[ ] re-evaluate target variable, need cumulative data due to how tournaments are scored 
-[ ] Incorporate additional datasets (possibility to include golfer place of birth/primary residence, course weather data)  
+[ ] create additional regression to predict on round_score  
+[ ] re-evaluate target variable, need cumulative data due to how tournaments are scored   
+[ ] Incorporate additional datasets (possibility to include golfer place of birth/primary   residence, course weather data)   
