@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Model</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: url('https://media0.giphy.com/media/30VQYCol8X4Na/giphy.gif') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+        }
+        .navbar img {
+            width: 24px;
+            height: 24px;
+            margin-left: 10px;
+        }
+        .title-box {
+            background-color: rgba(0, 0, 0, 0.5); /* Slightly translucent black background */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 100px; /* Increased margin to avoid overlap */
+        }
+        h1 {
+            font-size: 4em;
+            color: #d22f2f; /* Red color */
+            text-shadow: 2px 2px 0 #000000; /* Black outline */
+            font-family: 'Futura', sans-serif; /* Original font */
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h1 img {
+            width: 50px;
+            height: 50px;
+            margin: 0 10px;
+        }
+        p {
+            font-size: 1.5em;
+            text-align: center;
+        }
+        .dropdown-container {
+            margin-top: 20px;
+        }
+        select {
+            padding: 10px;
+            font-size: 1em;
+            margin: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+        .image-container {
+            margin-top: 20px;
+            text-align: center;
+            max-width: 80%;
+            background-color: rgba(0, 0, 0, 0.5); /* Slightly translucent black background */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        function updateEvents() {
+            const year = document.getElementById('year').value;
+            const eventSelect = document.getElementById('event');
+            eventSelect.innerHTML = '<option value="" disabled selected>Select Event</option>'; // Clear existing options
+
+            const events = {
+                'Masters Tournament': [2017, 2018, 2019, 2021, 2022, 2023, 2024],
+                'The Open Championship': [2017, 2018, 2019, 2021, 2022, 2023],
+                'PGA Championship': [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+                'THE PLAYERS Championship': [2017, 2018, 2019, 2021, 2022, 2023, 2024],
+                'U.S. Open': [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+            };
+
+            for (const [event, years] of Object.entries(events)) {
+                if (years.includes(parseInt(year))) {
+                    const option = document.createElement('option');
+                    option.value = event;
+                    option.text = event;
+                    eventSelect.appendChild(option);
+                }
+            }
+
+            updateImage(); // Update image based on new event options
+        }
+
+        function updateImage() {
+            const year = document.getElementById('year').value;
+            const event = document.getElementById('event').value;
+            const img = document.getElementById('event-image');
+
+            if (year && event) {
+                const imagePath = `output/${year}${event.replace(/ /g, '')}.png`;
+                img.src = imagePath;
+                img.style.display = 'block';
+            } else {
+                img.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <a href="sundayredEhome.html">Home</a>
+        <a href="sundayredEpredictor.html">Predictor</a>
+        <a href="https://github.com/bcp259/capstoneProject" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
+        </a>
+        <a href="https://www.linkedin.com/in/benjamin-choe/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+        </a>
+    </div>
+    <div class="title-box">
+        <h1>
+            <img src="s-l1600.png" alt="Golf Ball Icon">
+            Sunday Red E.
+            <img src="s-l1600.png" alt="Golf Ball Icon">
+        </h1>
+        <p>Welcome to my prediction model which predicts the final leaderboards for previous Major championships (including THE PLAYERS).</p>
+    </div>
+    <div class="dropdown-container">
+        <select id="year" onchange="updateEvents()">
+            <option value="" disabled selected>Select Year</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+        </select>
+        <select id="event" onchange="updateImage()">
+            <option value="" disabled selected>Select Event</option>
+        </select>
+    </div>
+    <div id="image-container" class="image-container">
+        <img id="event-image" src="" alt="Event Image" style="display: none;">
+    </div>
+</body>
+</html>
