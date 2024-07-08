@@ -57,7 +57,10 @@ The data for this project is sourced from [datagolf](https://datagolf.com/). Bel
 
 Through my model, I was able to build a predictor that was able to predict the top-5 finishers in past Majors (+The Players) from 2017-2024 (minus the exclusions noted above). There are even instances where the model was able to predict the 1st-3rd place finishers and as a result, I believe that while there is a lot of volatility in golf, and some that could even not be captured by present metrics, there is a feasible way to make a solid, data-backed recommendation when it comes to prediction on future event(s).
 
+## Project Preview
+![Project Preview](preview.png)
+
 ## To-Do List
 - [ ] Explore potential for adjusting model to factor in player performance in other non-Major tournaments
 - [ ] Continue to iterate model to adjust for low score predictions in efforts to build forecasting/prediction model for future event(s)
-- [ ] Explore possibility for introducing different models 
+- [ ] Explore possibility for introducing different models
