@@ -1,3 +1,0 @@
-here is a blank text file that is testing git hub capabilities 
-
-this is not a source of data
