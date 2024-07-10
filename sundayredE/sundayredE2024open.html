@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 Open</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: url('royaltroon.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+        .navbar {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: top 0.3s;
+        }
+        .navbar.hidden {
+            top: -60px; /* Adjust based on the height of your navbar */
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+        }
+        .navbar img {
+            width: 24px;
+            height: 24px;
+            margin-left: 10px;
+        }
+        .title-box {
+            background-color: rgba(0, 0, 0, 0.5); /* Slightly translucent black background */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 100px; /* Increased margin to avoid overlap */
+        }
+        h1 {
+            font-size: 4em;
+            color: #d22f2f; /* Red color */
+            text-shadow: 2px 2px 0 #000000; /* Black outline */
+            font-family: 'Futura', sans-serif; /* Original font */
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h1 img {
+            width: 50px;
+            height: 50px;
+            margin: 0 10px;
+        }
+        .content {
+            padding: 20px;
+            margin-top: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            text-align: center;
+            width: 80%;
+            max-width: 1200px;
+            box-sizing: border-box;
+        }
+        .content-section {
+            padding: 100px;
+            text-align: center;
+            width: 100%;
+            max-width: 1200px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            margin: 100px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+        }
+        .content-section img {
+            max-width: 300px; /* Adjust size as needed */
+            height: auto;
+            margin: 0 20px;
+        }
+        .content-section p {
+            flex-grow: 1;
+            margin: 0;
+            text-align: left;
+            font-size: 1.5em;
+        }
+        .content-section-center p {
+            text-align: center;
+        }
+        .final-results {
+            text-align: center;
+            font-size: 2em;
+            font-family: 'Playfair Display', serif;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .content p {
+            text-align: center;
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        .expanded-image img {
+            max-width: 500px; /* Expanded size */
+            height: auto;
+            margin: 0 auto;
+        }
+        .larger-image img {
+            max-width: 350px; /* Increased size for Ludvig Åberg */
+            height: auto;
+        }
+        .larger-text {
+            font-size: 2em; /* Increased font size for Ludvig Åberg text */
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar" id="navbar">
+        <a href="sundayredEhome.html">Home</a>
+        <a href="sundayredEpredictor.html">Predictor</a>
+        <a href="sundayredE2024open.html">2024 Open Championship</a>
+        <a href="https://github.com/bcp259/capstoneProject" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
+        </a>
+        <a href="https://www.linkedin.com/in/benjamin-choe/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+        </a>
+    </div>
+    <div class="title-box">
+        <h1>
+            <img src="s-l1600.png" alt="Golf Ball Icon">
+            Sunday Red E.
+            <img src="s-l1600.png" alt="Golf Ball Icon">
+        </h1>
+    </div>
+    <div class="content-section">
+        <img src="r100.png" alt="Image">
+        <p>My ultimate goal is to predict the winner of the 2024 Open Championship that takes place July 18th and ends on July 21st.</p>
+    </div>
+    <div class="content-section">
+        <p>I ran multiple iterations of models, ultimately 10 different iterations, on the list of players participating in this year's edition. These models included Ridge Regression, Random Forest, Ensemble, Gradient Boosting, and a whole lot of feature engineering.</p>
+        <img src="models.png" alt="Image">
+    </div>
+    <div class="content-section">
+        <div class="content-section-center">
+            <p>The results of my models gave me an average R<sup>2</sup> of 0.96, an average Mean Squared Error (MSE) of 0.07.</p>
+            <p>R<sup>2</sup> indicates how well the model explains the variability of the data.</p>
+            <p>MSE measures the average of the squares of the errors or deviations from the predicted values.</p>
+        </div>
+    </div>
+    <div class="content-section">
+        <div class="content-section-center">
+            <p>As a result, my predicted winner of this year's Open Championship is.....</p>
+        </div>
+    </div>
+    <div class="content-section larger-image">
+        <img src="ludvigaberg.jpg" alt="Image">
+        <p class="larger-text" style="text-align: center; font-size: 2em;">Ludvig Åberg!</p>
+        <img src="claretjug.png" alt="Image">
+    </div>
+    <div class="content-section expanded-image" style="position: relative;">
+        <div class="final-results" style="font-size: 2em;">Final Results</div>
+        <img src="topplayers.png" alt="Top Players Image">
+    </div>
+    <script>
+        const navbar = document.getElementById('navbar');
+        const firstSection = document.querySelector('.content-section');
+        let lastScrollY = window.scrollY;
+
+        document.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY < lastScrollY || currentScrollY < firstSection.offsetHeight) {
+                navbar.classList.remove('hidden');
+            } else {
+                navbar.classList.add('hidden');
+            }
+
+            lastScrollY = currentScrollY;
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (e.clientY < 50) {
+                navbar.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
