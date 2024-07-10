@@ -48,19 +48,26 @@ The data for this project is sourced from [datagolf](https://datagolf.com/). Bel
 - For The Open 2017, Masters 2017, and The PLAYERS 2020, certain metrics are missing, such as broken down strokes gained and average driving distance.
 - There is no prediction for The Masters 2020 (cut short due to COVID-19), The Open Championship 2020 (canceled due to COVID-19), and The Open Championship 2024 (event not yet occurred).
 
-## Model Performance
-**Prediction Model:** Multiple Linear Regression  
+## Past Model Performance
+**Past Prediction Model:** Multiple Linear Regression  
 - **Test Set R-squared:** 0.74  
 - **Training Set R-squared:** 0.757  
 - **Average Prediction Rate:** 57.78%  
 - **Median Prediction Rate:** 60%
 
-Through my model, I was able to build a predictor that was able to predict the top-5 finishers in past Majors (+The Players) from 2017-2024 (minus the exclusions noted above). There are even instances where the model was able to predict the 1st-3rd place finishers and as a result, I believe that while there is a lot of volatility in golf, and some that could even not be captured by present metrics, there is a feasible way to make a solid, data-backed recommendation when it comes to prediction on future event(s).
+Through my model, I was able to build a predictor that was able to predict the top-5 finishers in past Majors (+The Players) from 2017-2024 (minus the exclusions noted above). There are even instances where the model was able to predict the 1st-3rd place finishers and as a result, I believe that while there is a lot of volatility in golf, and some that could even not be captured by present metrics, there is a feasible way to make a solid, data-backed recommendation when it comes to prediction on future event(s). (*ref. capstone v3 past predict notebook*)
+
+## Future Model Performance
+**Future Prediction Model:** Ridge Regression, Random Forest, Ensemble, Random Forest, Gradient Boosting Machine
+- **R-squared:** 0.96
+- **Mean Squared Error (MSE):** 0.07
+
+I was able to build an adjusted dataframe, iterating the dataset 10 times over multiple models with feature engineering to analyze the list of the participants for the 2024 The Open Championship. Through my iterations, I got a resulting average R-squared of 0.96 and MSE of 0.07. Ultimately, through my models, I was able to create a prediction of Ludvig Åberg being my ultimate winner, with Scottie Scheffler coming in 2nd place (both being placed 1st and 2nd consistently through each iteration). Final results is in topplayers.png. (*ref. capstone v4*)
 
 ## Project Preview
 ![Project Preview](preview.png)
 
 ## To-Do List
-- [ ] Explore potential for adjusting model to factor in player performance in other non-Major tournaments
-- [ ] Continue to iterate model to adjust for low score predictions in efforts to build forecasting/prediction model for future event(s)
+- [ ] Explore potential for adjusting model to factor in player performance in other non-Major tournaments and adding future data to build model performance
+- [ ] Continue to iterate model to adjust for predictions in efforts to build increased accuracy forecasting/prediction model for future event(s)
 - [ ] Explore possibility for introducing different models
